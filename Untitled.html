@@ -1,2 +1,62 @@
+<!Doctype html>
 <html>
+    
+<head>
+    <title>todoMVC</title>
+  <style>
+    #main h1 {
+    font-size:4em; opacity:0.15; text-align:center;text-shadow: -1px -1px rgba(0,0,0,0.2);width:100%;}
+    body { background-color:#eaeaea; background-image:url('http://todomvc.com/labs/architecture-examples/duel/www/cdn/0c975f0bb536597038b63a8cb0d85cff2222b0c9.png'); background-repeat:repeat; }
+  #main{
+        
+          border: 1px solid #ccc;
+          position: relative;
+          border-top-left-radius: 2px;
+          border-top-right-radius: 2px
+        
+      }
+    
+      #new-todo {
+          
+          position:relative;
+         left:20%;
+         padding: 16px 16px 16px 60px;
+            border:none;
+          background: rgba(0,0,0,0.02);
+          z-index: 2;
+          box-shadow: none;
+          border-top:20px black solid
+             /* box-sizing: border-box;*/
+  
+      }
+    
+      .uncheck {
+       
+        Position:relative;
+        Display:inline-block;
+          
+            float:left;
+          width:50px;          
+          height:59px;
+        z-index:3;
+        border-style:double;
+        border-left:2px black;
+          border-bottom:none;
+          border-top:none;
+        }
+   
+      
+    </style>
+</head>
+<body>
+<div id="main">   
+<h1>todos</h1>
+   
+        <input id="new-todo" placeholder="What needs to be done?" autofocus>
+        <div class="uncheck">
+        <input  type="checkbox" class="uncheck"></div>
+   
+</div>   
+                                               
+</body>
 </html>
