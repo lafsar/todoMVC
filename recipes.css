@@ -1,0 +1,8 @@
+ul.ingredlist { list-style-type:none;}
+li {font-style:italic;}
+p.recipename {font-size:2em; font-weight:bold; border-bottom:2px solid black;text-align:center;}
+p.description {text-indent:10%;}
+span.quantity {display:inline-block; width:35%;}
+/*span.ingredient{display:inline-block;}*/
+body {padding-left:25%; padding-right:25%;}
+        
