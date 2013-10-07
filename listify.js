@@ -5,7 +5,8 @@ $(document).ready(function() {
     if (submit == 13) {
     var text = $('#new-filter-string').val();
       if(text) {
-	    $('.filter-string-list').append("<div class='addingitem'><div class='smallbox'></div>" + text + "</div>");
+	    $('.filter-string-list')
+	    .append("<div class='smallboxnew'><input id='new-toggle' type = 'checkbox'></div><div class='addingitem'>" + text + "</div>");
       }
     }
   });

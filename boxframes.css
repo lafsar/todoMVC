@@ -6,6 +6,7 @@
     border-top : 15px solid black;
    
   }
+
   .smallbox
   {
     display : block;
@@ -15,6 +16,18 @@
     border-right : 6px double pink;
     margin : 0px;
     padding : 0px;
+    background-color : white;
+  }
+  .smallboxnew
+  {
+    display : block;
+    float : left;
+    width : 9%;
+    height : 40px;
+    border-right : 6px double pink;
+    margin : 0px;
+    padding : 0px;
+    background-color : white;
   }
   .new-item
   {
@@ -23,13 +36,32 @@
     height : 95%;
     float : left;
     border-style : none;
-    margin : 0px;
-    padding-left : 5px;
+    text-indent : 5px;
+    
   }
   .addingitem
   {
-     width : 100%;
+    display : block;
+    width : 89%;
     height : 40px;
-    background-color : white;
+    float : left;
+    background-color :white;
     border-top: 1px dotted #adadad;
+    text-indent : 5px;
+  
   }
+  
+  .toggle-all
+  {
+   position:relative;
+   left:16px;
+   top:10px;
+
+  }
+  #new-toggle
+  {
+     position:relative;
+     left:16px;
+     top:10px;
+  }
+
