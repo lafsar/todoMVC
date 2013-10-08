@@ -35,15 +35,15 @@
     text-indent: 5px;
     line-height : 250%;
   }
-  #toggle
+  .toggle
   {
     position:relative;
     top:10px;
     left:15px;
   }
-  #toggle-new
+  .toggle-new
   {
     position:relative;
     top:0px;
-    left:15px;
+    left:10px;
   }
