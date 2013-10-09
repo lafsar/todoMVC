@@ -4,6 +4,7 @@ $(document).ready(function() {
     if (submit == 13)
     {
       var text = $('#new-filter-string').val();
+      $('#new-filter-string').val('');
       if(text)
       {
 	      $('.filter-string-list')
@@ -48,9 +49,22 @@ $(document).ready(function() {
             $('#todo-count').html('<strong>'+ len +'</strong> items left');
           }
         });
-      }
       $('#todo-count').html('<strong>'+ len +'</strong> items left');
+      }
+      
     }
   });
 });
-
+/*var app = {
+addTask:
+togglestatus:
+toggleAll:
+beginedittask:
+endEdittask:
+deleteTask:
+filterTasks: {'all, active, completed'};
+clearCompleted:
+updateCount
+};*/
+//clone hidden elements in html
+//chaine .append('<Span>').text()
