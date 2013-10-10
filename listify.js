@@ -55,9 +55,6 @@ $(document).ready(function() {
       $('#todo-count').html('<strong>'+ len +'</strong> items left');
       }
     }
-    
-
-    
   });
   
   $(document).on('mouseenter', '.addingitem',  function(){
@@ -66,7 +63,13 @@ $(document).ready(function() {
          console.log($(this).text());
    }).on('mouseleave', '.addingitem', function() {
         $('span').remove('.delete');
-  });    
+  });
+  
+  $(document).on('click', '.delete', function(){
+    $(this).parents('.addingitem').remove();
+    len = $('.addingitem').length;
+    $('#todo-count').html('<strong>' + len +'</strong> items left');
+  });
 
 });
 
