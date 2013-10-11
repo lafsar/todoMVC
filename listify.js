@@ -55,7 +55,7 @@ $(document).ready(function() {
     }
   });
 $(document).on('mouseenter', '.addingitem',  function(){
-          //console.log($(this).val());
+       
  $(this).prepend('<span class="delete">&#215</span>');
          }).on('mouseleave', '.addingitem', function() {
         $('span').remove('.delete');
@@ -72,6 +72,19 @@ $(document).on('mouseenter', '.addingitem',  function(){
   $('.remaining').text(remaining.length + ' items left');
 }
 
+    $('.show-all').click(function showall () {
+    $('.filter-string-list').removeClass('show-active show-complete');
+   
+  });
+   $('.show-active').click(function showactive () {
+    $('.filter-string-list').removeClass('show-complete');
+    $('.filter-string-list').addClass('show-active');
+  });
+   $('.show-complete').click(function showcomplete () {
+    $('.filter-string-list').removeClass('show-active');
+    $('.filter-string-list').addClass('show-complete');
+  });
+  
 
 });
 

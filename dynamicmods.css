@@ -7,6 +7,7 @@
 }
 .completed {
   text-decoration:line-through;
+  color: #777;
 }
 .remaining {
 float: left;
@@ -31,6 +32,11 @@ left: 0;
 #filters li{
   display:inline;
   font-size:0.75em;
+  text-decoration:none;
+}
+a {
+    color:  #777;
+    text-decoration: none;
 }
 #clear-completed {
 float: right;
@@ -42,6 +48,13 @@ font-size: 11px;
 padding: 0 8px;
 border-radius: 3px;
 box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+.filter-string-list.show-active .completed {
+  display: none; 
+}
+
+.filter-string-list.show-complete .addingitem:not(.completed) {
+  display: none; 
 }
 
 
