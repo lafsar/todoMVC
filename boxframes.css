@@ -56,7 +56,7 @@
     z-index: 1;
     text-align: center;
   }
-#todo-count {
+.remaining {
 float: left;
 text-align: left;
 }
@@ -86,10 +86,12 @@ box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
 .delete {
  float:right;
- display:inline;
+
  padding-right: 15px;
  font-size: 2em;
  color: red;
 }
-
+.completed {
+  text-decoration:line-through;
+}
 

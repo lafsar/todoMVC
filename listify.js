@@ -11,71 +11,73 @@ $(document).ready(function() {
 	      .append("<div class='addingitem'><div class='smallbox'>" +
 	      "<input type='checkbox' class='toggle-new'>" +
 	      "</div><div class='txt'>" + text + "</div></div>");
-	      var len = $('.addingitem').length;
+	      updatecount();
+	      //var len = $('.addingitem').length;
         $('.toggle').change(function(ev) {
           var target = $(ev.target);
-          if ($(target).prop('checked'))
-          {
+           if ($(target).prop('checked'))
+           {
             $('.addingitem')
-            .css('text-decoration', 'line-through');
+            .addClass('completed');
             $('.toggle-new')
             .prop('checked', true);
-            var newd = 0;
-          $('#todo-count').html('<strong>'+ newd +'</strong> items left');
-          }
-          else
-          {
+            updatecount();
+           }
+           else
+           {
             $('.addingitem')
-            .css('text-decoration', 'none');
+            .removeClass('completed');
             $('.toggle-new')
             .prop('checked', false);
-            $('#todo-count').html('<strong>'+ len +'</strong> items left');
-          }
-        });
+            updatecount(); 
+           }
+            
+        });  
         $('.toggle-new').change(function(ev) {
           var target = $(ev.target);
-          if ($(target).prop('checked'))
+         if ($(target).prop('checked'))
           {
             $(this)
             .parents('.addingitem')
-            .css('text-decoration', 'line-through');
-            len--;
-            $('#todo-count').html('<strong>' + len +'</strong> items left');
-          } 
-          else
-          {
-            $(this)
-            .parents('.addingitem')
-            .css('text-decoration', 'none');
-            len++;
-            $('#todo-count').html('<strong>'+ len +'</strong> items left');
+            .addClass('completed');
+            updatecount();
           }
+          else {
+            $(this)
+            .parents('.addingitem')
+            .removeClass('completed');
+            updatecount();
+          }
+        
         });
-   
-      $('#todo-count').html('<strong>'+ len +'</strong> items left');
+
       }
     }
   });
-  
-  $(document).on('mouseenter', '.addingitem',  function(){
-      //console.log($(this).val());
-         $(this).prepend('<span class="delete">&#215</span>');
-         console.log($(this).text());
-   }).on('mouseleave', '.addingitem', function() {
+$(document).on('mouseenter', '.addingitem',  function(){
+          //console.log($(this).val());
+ $(this).prepend('<span class="delete">&#215</span>');
+         }).on('mouseleave', '.addingitem', function() {
         $('span').remove('.delete');
-  });
+         });
   
-  $(document).on('click', '.delete', function(){
-    $(this).parents('.addingitem').remove();
-    len = $('.addingitem').length;
-    $('#todo-count').html('<strong>' + len +'</strong> items left');
-  });
+        $(document).on('click', '.delete', function(){
+           $(this).parents('.addingitem').remove();
+          updatecount();
+        
+         });
+
+ function updatecount () {
+  var remaining = $('.addingitem').not('.completed');
+  $('.remaining').text(remaining.length + ' items left');
+}
+
 
 });
 
 
 //on hover, add text item &#215; to addingitem
-//if click on &#215;, then remove addingitem and all children
+//if click on &#215;, then remove parents
 
 //make a var template that contains an object of html tags
 //use .find() to find the tag , add text, then .end() to escape from label
