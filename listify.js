@@ -12,7 +12,7 @@ $(document).ready(function() {
 	      "<input type='checkbox' class='toggle-new'>" +
 	      "</div><div class='txt'>" + text + "</div></div>");
 	      updatecount();
-	      //var len = $('.addingitem').length;
+	     
         $('.toggle').change(function(ev) {
           var target = $(ev.target);
            if ($(target).prop('checked'))
@@ -70,7 +70,11 @@ $(document).on('mouseenter', '.addingitem',  function(){
  function updatecount () {
   var remaining = $('.addingitem').not('.completed');
   $('.remaining').text(remaining.length + ' items left');
+  var completebutton = $('.completed').length;
+   $('#clear-completed').text("Complete (" + completebutton + ")"); 
 }
+  
+ 
 
     $('.show-all').click(function showall () {
     $('.filter-string-list').removeClass('show-active show-complete');
@@ -84,7 +88,10 @@ $(document).on('mouseenter', '.addingitem',  function(){
     $('.filter-string-list').removeClass('show-active');
     $('.filter-string-list').addClass('show-complete');
   });
-  
+  $('#clear-completed').click(function clearcomplete() {
+    $('.addingitem').remove('.completed');
+    updatecount();
+  });
 
 });
 
