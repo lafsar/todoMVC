@@ -10,6 +10,7 @@ $(document).ready(function() {
         $('.filter-string-list')
 	      .append("<div class='addingitem'><div class='smallbox'>" +
 	      "<input type='checkbox' class='toggle-new'>" +
+	      "<div class='txts'></div><input type='text' class='edit-item'>" +
 	      "</div><div class='txt'>" + text + "</div></div>");
 	      updatecount();
 	     
@@ -93,6 +94,43 @@ $(document).on('mouseenter', '.addingitem',  function(){
     updatecount();
   });
 
+  function beginEdit (ev) {
+    var todo = $(ev.target).parents('.addingitem');
+    // adding a class to display
+    todo.addClass('edit');
+    // set value of input to the current label
+    todo.find('input.edit-item')
+      .val($(ev.target).text())
+      // focus the input
+      .focus();
+    return false;
+  }
+  function endEdit () {
+    // get value of the input
+    var todo = $('.addingitem.edit');
+    var value = todo.find('input.edit-item').val();
+    // update the label to the new value
+    todo.find('.txt').text(value);
+    // hide the input
+    todo.removeClass('edit');    
+
+    
+  }
+  function editKeypress (ev) {
+    // end edit if enter key pressed
+    if(ev.which === 13) {
+    endEdit();
+    }
+  }
+  
+  $('.filter-string-list').on('dblclick', '.addingitem .txt', beginEdit);
+  
+  
+  
+    $('.filter-string-list').on('blur', '.addingitem input.edit-item', endEdit);
+   $('.filter-string-list').on('keypress', '.addingitem input.edit-item', editKeypress);
+
+  
 });
 
 
