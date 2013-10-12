@@ -124,11 +124,8 @@ $(document).on('mouseenter', '.addingitem',  function(){
   }
   
   $('.filter-string-list').on('dblclick', '.addingitem .txt', beginEdit);
-  
-  
-  
-    $('.filter-string-list').on('blur', '.addingitem input.edit-item', endEdit);
-   $('.filter-string-list').on('keypress', '.addingitem input.edit-item', editKeypress);
+  $('.filter-string-list').on('blur', '.addingitem input.edit-item', endEdit);
+  $('.filter-string-list').on('keypress', '.addingitem input.edit-item', editKeypress);
 
   
 });
